@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, SectionList, RefreshControl, TouchableOpacity, Animated, Dimensions, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, SectionList, RefreshControl, TouchableOpacity, Dimensions, ScrollView } from 'react-native';
+import Animated, {SharedValue} from 'react-native-reanimated';
 import PropTypes from 'prop-types';
 import Carousel from '@itenl/react-native-snap-carousel';
 import HocComponent from './HocComponent';
@@ -136,8 +137,8 @@ export default class ScrollableTabView extends React.Component {
 
   _initialProperty() {
     const { screenScrollThrottle } = this.props;
-    this.scroll2VerticalPos = new Animated.Value(0);
-    this.scroll2HorizontalPos = new Animated.Value(0);
+    this.scroll2VerticalPos = new SharedValue(0);
+    this.scroll2HorizontalPos = new SharedValue(0);
     this.tabsMeasurements = [];
     this.tabWidth = 0;
     this.tabWidthWrap = 0;

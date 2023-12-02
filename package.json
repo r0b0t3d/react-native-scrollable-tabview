@@ -10,6 +10,9 @@
     "lodash.throttle": "^4.1.1",
     "@itenl/react-native-snap-carousel": "^4.0.0-beta.6"
   },
+  "peerDependencies": {
+    "react-native-reanimated": "*"
+  },
   "keywords": [
     "react",
     "sticky",
